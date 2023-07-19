@@ -1,4 +1,4 @@
-package com.imajity.servicedesk;
+package com.tiazen.servicedesk.tasks;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

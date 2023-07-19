@@ -1,4 +1,4 @@
-package com.imajity.servicedesk;
+package com.tiazen.servicedesk.tasks;
 
 import java.util.Objects;
 
@@ -7,15 +7,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-class Task {
+public class Task {
 
     private @Id @GeneratedValue Long id;
     private String name;
     private String description;
 
-    Task() {}
+    public Task() {}
 
-    Task(String name, String description) {
+    public Task(String name, String description) {
         this.name = name;
         this.description = description;
     }

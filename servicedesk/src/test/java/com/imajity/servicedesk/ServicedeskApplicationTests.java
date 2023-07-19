@@ -1,4 +1,4 @@
-package com.imajity.servicedesk;
+package com.tiazen.servicedesk;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

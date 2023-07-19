@@ -1,4 +1,4 @@
-package com.imajity.servicedesk;
+package com.tiazen.servicedesk.tasks;
 
 public class TaskNotFoundException extends RuntimeException {
     

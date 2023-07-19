@@ -1,11 +1,12 @@
-package com.imajity.servicedesk;
+package com.tiazen.servicedesk;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.imajity.servicedesk.TaskRepository;
+import com.tiazen.servicedesk.tasks.Task;
+import com.tiazen.servicedesk.tasks.TaskRepository;
 
 @Configuration
 class LoadDatabase {
