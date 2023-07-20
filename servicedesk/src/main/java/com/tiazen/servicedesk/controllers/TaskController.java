@@ -1,33 +1,39 @@
-package com.tiazen.servicedesk.tasks;
+package com.tiazen.servicedesk.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.tiazen.servicedesk.exceptions.TaskNotFoundException;
+import com.tiazen.servicedesk.models.Task;
+import com.tiazen.servicedesk.repositories.TaskRepository;
 
 import java.util.List;
 
 @RestController
-public class TaskConroller {
+@RequestMapping("/tasks")
+public class TaskController {
     private final TaskRepository repository;
 
-    TaskConroller(TaskRepository repository) {
+    TaskController(TaskRepository repository) {
         this.repository = repository;
     }
 
-    @GetMapping("/tasks")
+    @GetMapping("/")
     List<Task> all() {
         return repository.findAll();
     }
 
-    @PostMapping("/task/create")
+    @PostMapping("/create")
     Task createTask(@RequestBody Task newTask) {
         return repository.save(newTask);
     }
 
-    @GetMapping("/task/{id}")
+    @GetMapping("/{id}")
     Task returnTask(@PathVariable Long id) {
         return repository.findById(id).orElseThrow(() -> new TaskNotFoundException(id));
     }

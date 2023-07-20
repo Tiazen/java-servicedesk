@@ -1,4 +1,4 @@
-package com.tiazen.servicedesk.tasks;
+package com.tiazen.servicedesk.models;
 
 import java.util.Objects;
 

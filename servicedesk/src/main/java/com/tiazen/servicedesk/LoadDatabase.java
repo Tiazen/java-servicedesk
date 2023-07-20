@@ -5,8 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.tiazen.servicedesk.tasks.Task;
-import com.tiazen.servicedesk.tasks.TaskRepository;
+
+import com.tiazen.servicedesk.models.Task;
+import com.tiazen.servicedesk.repositories.TaskRepository;
 
 @Configuration
 class LoadDatabase {
@@ -17,8 +18,6 @@ class LoadDatabase {
     CommandLineRunner initDatabase(TaskRepository repository) {
 
         return args -> {
-            logger.info("Preload" + repository.save(new Task("Test task 1", "task 1")));
-            logger.info("Preload" + repository.save(new Task("Test task 2", "task 2")));
         };
     }
 }
